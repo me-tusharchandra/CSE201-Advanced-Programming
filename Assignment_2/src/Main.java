@@ -7,7 +7,7 @@ public class Main {
     static int app0 = 1; //app variables
     static boolean deals1 = true;
     // Changes: change the admin1 to false when admin enter details
-    static String admin_username, admin_password, pass;
+    static String admin_username, admin_password;
     static int actions1 = 0; // action variables
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
@@ -27,10 +27,13 @@ public class Main {
             }
             else if(app0 == 3){
                 Deals.deals();
-                break;
             }
         }
     }
+
+    // Classes
+    // 1. Admin - admin(), action()
+    // 2. Deals - deals()
     static class Admin{
         static int ad_count = 0;
          static boolean check1 = true;
@@ -40,8 +43,8 @@ public class Main {
             System.out.println("Please enter your username and password");
             sc.nextLine();
             if(ad_count == 0) {
-                String admin_username = sc.nextLine();
-                String admin_password = sc.nextLine();
+                admin_username = sc.nextLine();
+                admin_password = sc.nextLine();
 
                 System.out.println("Welcome " + admin_username + "!!!!");
                 action();
@@ -49,12 +52,13 @@ public class Main {
             }
             else {
                 while(check1) {
+                    String user = sc.nextLine();
                     String pass = sc.nextLine();
-                    if (Objects.equals(pass, admin_password)) {
+                    if (Objects.equals(user,admin_username) && Objects.equals(pass, admin_password)) {
                         check1 = false;
                         action();
                     } else {
-                        System.out.println("Wrong password entered. \nTry Again!!!");
+                        System.out.println("Wrong credentials entered. \nTry Again!!!");
                     }
                 }
 
