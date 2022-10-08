@@ -36,7 +36,7 @@ public class Main {
     // 2. Deals - deals()
     static class Admin{
         static int ad_count = 0;
-         static boolean check1 = true;
+        static boolean check1 = true;
         public static void admin(){
             System.out.println("Dear Admin:");
             System.out.println();
