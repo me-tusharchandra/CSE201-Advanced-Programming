@@ -1,17 +1,15 @@
-import java.util.Objects;
-import java.util.Scanner;
-import java.util.concurrent.ScheduledExecutorService;
-
+import java.util.*;
 
 public class Main {
-    static int app0 = 1; //app variables
-    static boolean deals1 = true;
-    // Changes: change the admin1 to false when admin enter details
+    static int in1 = 1; //input variable
+    static boolean deals1 = true; // booleans
+
     static String admin_username, admin_password;
+
     static int actions1 = 0; // action variables
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
-        while(app0 != 5){
+        while(in1 != 5){
             System.out.println("Welcome to FLIPZON");
             System.out.println();
             System.out.println("    1.) Enter as Admin");
@@ -19,13 +17,13 @@ public class Main {
             System.out.println("    3.) Show available deals");
             System.out.println("    4.) Enter as Customer");
             System.out.println("    5.) Exit the Application");
-            app0 = sc.nextInt();
-            if(app0 > 5 || app0 < 1)
+            in1 = sc.nextInt();
+            if(in1 > 5 || in1 < 1)
                 System.out.println("Wrong choice entered. \nTry again !!!");
-            else if(app0 == 1){
+            else if(in1 == 1){
                 Admin.admin();
             }
-            else if(app0 == 3){
+            else if(in1 == 3){
                 Deals.deals();
             }
         }
@@ -78,11 +76,12 @@ public class Main {
             System.out.println("    6.) Add giveaway deal");
             System.out.println("    7.) Back");
             in1 = sc.nextInt();
-            if (in1 == 7){
-                app0 = 0;
+            if(in1 == 1){
+
             }
-
-
+            else if (in1 == 7){
+                in1 = 0;
+            }
         }
     }
 
