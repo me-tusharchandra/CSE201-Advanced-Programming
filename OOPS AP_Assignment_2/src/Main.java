@@ -29,7 +29,7 @@ public class Main{
             else if(in1 == 1){
                 System.out.println("Dear Admin:");
                 System.out.println();
-                System.out.println("Please enter your username and password");
+                System.out.println("Please enter your username and password.");
 
                 while(true){
                     sc.nextLine();
@@ -60,7 +60,7 @@ public class Main{
 
                                 Category iCat1 = new Category(name, id); //  category object 1
 
-                                System.out.println("Add a Product\nEnter product Name: ");
+                                System.out.println("\n\nAdd a Product\nEnter product Name: ");
                                 String prodName = sc.nextLine();
                                 System.out.println("Enter Product ID: ");
                                 String ID = sc.nextLine();
@@ -76,7 +76,7 @@ public class Main{
                                 System.out.println("Enter the name of category to be deleted: ");
                                 sc.nextLine();
                                 String categoryName = sc.nextLine();
-                                System.out.println("Enter Category ID");
+                                System.out.println("Enter Category ID:");
                                 String iid = sc.nextLine();
                                 Category iCat2 = new Category(categoryName,iid);
                                 int temp = 0;
@@ -121,6 +121,27 @@ public class Main{
                                     System.out.println("Product does not exist !!!");
                                 }
                             }
+                            else if(in2 ==5){
+                                System.out.println("Dear Admin give the Product ID you want to add discount for:");
+                                System.out.println("\nEnter the Product ID: ");
+                                sc.nextLine();
+                                String idie = sc.nextLine();
+                                System.out.println("Enter discount for Elite, Prime and Normal customers respectively (in % terms): ");
+                                int elitePrice = sc.nextInt();
+                                int primePrime = sc.nextInt();
+                                int normalPrice = sc.nextInt();
+                                sc.nextLine();
+                                int temp2 = 0;
+                                for(int l = 0; l<iAdmin1.productList.size(); l++){
+                                    if(iAdmin1.productList.get(l).id.equals(idie)){
+                                        iAdmin1.discount(idie,elitePrice,primePrime,normalPrice);
+                                        temp2++;
+                                    }
+                                }
+                                if(temp2 == 0){
+                                    System.out.println("No product was found with similar Product ID. \nTry Again !!!");
+                                }
+                            }
 
                             else if (in2 == 7) break;
                         }
@@ -135,4 +156,3 @@ public class Main{
         }
     }
 }
-

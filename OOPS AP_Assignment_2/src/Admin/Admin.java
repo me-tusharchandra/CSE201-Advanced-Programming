@@ -34,7 +34,7 @@ public class Admin {
         }
     }
 
-    public void dicsount(String ID, int eliteDisc, int primeDisc, int normalDisc){
+    public void discount(String ID, int eliteDisc, int primeDisc, int normalDisc){
         for (Product product : productList) {
             if (product.id.equals(ID)) {
                 product.normal_price = product.price * (1 - (normalDisc / 100));
